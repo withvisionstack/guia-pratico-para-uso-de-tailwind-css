@@ -1,0 +1,30 @@
+# Documentação de Estilo CSS - withvisionstack
+
+Este projeto é uma documentação visual e prática de utilitários CSS (baseado em Tailwind CSS) criada para facilitar o aprendizado e consulta rápida das classes mais usadas. A documentação está organizada em sessões, cada uma tratando de um aspecto do design, como tipografia, espaçamentos, cores, grids, entre outros.
+
+## Sobre o Projeto
+
+Este site funciona como um guia de referência para desenvolvedores frontend que querem entender e aplicar estilos CSS utilitários de forma rápida e prática, com exemplos e descrições.
+
+Além de ser um site, ele pode ser convertido em PDF para facilitar o download, consulta offline e compartilhamento.
+
+O projeto é mantido por [withvisionstack](https://github.com/withvisionstack).
+
+---
+
+## Estrutura do Projeto
+
+- Cada seção do site cobre um tema específico do CSS utilitário (por exemplo, tipografia, cores, espaçamento).
+- O layout é simples, limpo e responsivo, utilizando classes Tailwind para estilos.
+- O código está organizado em HTML, com comentários para facilitar a manutenção e expansão.
+- Um footer com link para o repositório oficial GitHub está presente para creditar e facilitar acesso ao código fonte.
+
+---
+
+## Como Usar
+
+1. **Navegar pelo site:** Explore as sessões para visualizar exemplos de classes CSS e suas descrições.
+2. **Converter para PDF:** Utilize ferramentas de impressão do navegador para salvar o conteúdo como PDF para consulta offline.
+3. **Clonar o repositório:** Faça download ou clone o repositório para editar, expandir ou usar localmente.
+   ```bash
+   git clone https://github.com/withvisionstack/guia-pr-tico-para-uso-de-tailwind-css

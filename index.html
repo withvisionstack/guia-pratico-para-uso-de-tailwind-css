@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta class="Guia completo em Português para estudos baseados em Tailwind.CSS">
+    <meta class="Aprenda a utiliza-lo com instrução rápida básica por tópicos e baixe o pdf no github para aplicações em seus estudos">
+    <title>Guia Completo Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .break-page { page-break-before: always; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
+    <div class="max-w-4xl mx-auto p-8 bg-white shadow-lg">
+        
+        <!-- Header -->
+        <header class="text-center mb-12 border-b-4 border-blue-500 pb-8">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Guia Completo Tailwind CSS</h1>
+            <p class="text-lg text-gray-600">Referência essencial para desenvolvedores e designers</p>
+            <p class="text-sm text-gray-500 mt-2">Versão em Português • 2025</p>
+        </header>
+
+        <!-- Índice -->
+        <nav class="mb-12 bg-blue-50 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Índice</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                <a href="#layout" class="text-blue-600 hover:underline">1. Layout e Posicionamento</a>
+                <a href="#spacing" class="text-blue-600 hover:underline">2. Espaçamento (Margin & Padding)</a>
+                <a href="#sizing" class="text-blue-600 hover:underline">3. Dimensões (Width & Height)</a>
+                <a href="#typography" class="text-blue-600 hover:underline">4. Tipografia</a>
+                <a href="#colors" class="text-blue-600 hover:underline">5. Cores e Fundos</a>
+                <a href="#borders" class="text-blue-600 hover:underline">6. Bordas e Outline</a>
+                <a href="#effects" class="text-blue-600 hover:underline">7. Efeitos e Sombras</a>
+                <a href="#responsive" class="text-blue-600 hover:underline">8. Design Responsivo</a>
+                <a href="#flexbox" class="text-blue-600 hover:underline">9. Flexbox</a>
+                <a href="#grid" class="text-blue-600 hover:underline">10. CSS Grid</a>
+                <a href="#transforms" class="text-blue-600 hover:underline">11. Transformações</a>
+                <a href="#animations" class="text-blue-600 hover:underline">12. Animações e Transições</a>
+            </div>
+        </nav>
+
+        <!-- Layout e Posicionamento -->
+        <section id="layout" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">1. Layout e Posicionamento</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Display</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">block</code> - display: block</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">inline-block</code> - display: inline-block</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">inline</code> - display: inline</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">flex</code> - display: flex</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">inline-flex</code> - display: inline-flex</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">grid</code> - display: grid</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">hidden</code> - display: none</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">table</code> - display: table</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Position</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">static</code> - position: static</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">fixed</code> - position: fixed</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">absolute</code> - position: absolute</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">relative</code> - position: relative</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">sticky</code> - position: sticky</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Posicionamento (Top, Right, Bottom, Left)</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">top-0</code> - top: 0px</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">top-1</code> - top: 0.25rem</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">top-2</code> - top: 0.5rem</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">top-4</code> - top: 1rem</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">top-8</code> - top: 2rem</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">top-16</code> - top: 4rem</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">right-0</code> - right: 0px</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">bottom-0</code> - bottom: 0px</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">left-0</code> - left: 0px</div>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">* Valores disponíveis: 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96</p>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Z-Index</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-0</code> - z-index: 0</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-10</code> - z-index: 10</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-20</code> - z-index: 20</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-30</code> - z-index: 30</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-40</code> - z-index: 40</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-50</code> - z-index: 50</div>
+                        <div><code class="bg-blue-100 px-2 py-1 rounded">z-auto</code> - z-index: auto</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="break-page"></div>
+
+        <!-- Espaçamento -->
+        <section id="spacing" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-green-500 pl-4">2. Espaçamento (Margin & Padding)</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Padding</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4">
+                        <div><code class="bg-green-100 px-2 py-1 rounded">p-0</code> - padding: 0px</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">p-1</code> - padding: 0.25rem (4px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">p-2</code> - padding: 0.5rem (8px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">p-4</code> - padding: 1rem (16px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">p-8</code> - padding: 2rem (32px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">p-16</code> - padding: 4rem (64px)</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-green-100 px-2 py-1 rounded">px-4</code> - padding-left & right</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">py-4</code> - padding-top & bottom</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">pt-4</code> - padding-top</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">pr-4</code> - padding-right</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">pb-4</code> - padding-bottom</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">pl-4</code> - padding-left</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Margin</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4">
+                        <div><code class="bg-green-100 px-2 py-1 rounded">m-0</code> - margin: 0px</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">m-auto</code> - margin: auto</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">m-1</code> - margin: 0.25rem (4px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">m-2</code> - margin: 0.5rem (8px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">m-4</code> - margin: 1rem (16px)</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">m-8</code> - margin: 2rem (32px)</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-green-100 px-2 py-1 rounded">mx-auto</code> - margin-left & right: auto</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">my-4</code> - margin-top & bottom</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">mt-4</code> - margin-top</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">mr-4</code> - margin-right</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">mb-4</code> - margin-bottom</div>
+                        <div><code class="bg-green-100 px-2 py-1 rounded">ml-4</code> - margin-left</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                <h4 class="font-semibold text-yellow-800 mb-2">Escala de Valores Disponíveis:</h4>
+                <p class="text-sm text-yellow-700">0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96</p>
+            </div>
+        </section>
+
+        <!-- Dimensões -->
+        <section id="sizing" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-purple-500 pl-4">3. Dimensões (Width & Height)</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Width (Largura)</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-0</code> - width: 0px</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-1</code> - width: 0.25rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-4</code> - width: 1rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-8</code> - width: 2rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-16</code> - width: 4rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-32</code> - width: 8rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-auto</code> - width: auto</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-full</code> - width: 100%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-screen</code> - width: 100vw</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-1/2</code> - width: 50%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-1/3</code> - width: 33.333333%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-2/3</code> - width: 66.666667%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-1/4</code> - width: 25%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-3/4</code> - width: 75%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">w-fit</code> - width: fit-content</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Height (Altura)</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-0</code> - height: 0px</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-1</code> - height: 0.25rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-4</code> - height: 1rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-8</code> - height: 2rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-16</code> - height: 4rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-32</code> - height: 8rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-auto</code> - height: auto</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-full</code> - height: 100%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-screen</code> - height: 100vh</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-1/2</code> - height: 50%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-1/3</code> - height: 33.333333%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-2/3</code> - height: 66.666667%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-1/4</code> - height: 25%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-3/4</code> - height: 75%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">h-fit</code> - height: fit-content</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Min/Max Width & Height</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">min-w-0</code> - min-width: 0px</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">min-w-full</code> - min-width: 100%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-xs</code> - max-width: 20rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-sm</code> - max-width: 24rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-md</code> - max-width: 28rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-lg</code> - max-width: 32rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-xl</code> - max-width: 36rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-2xl</code> - max-width: 42rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-4xl</code> - max-width: 56rem</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">max-w-full</code> - max-width: 100%</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">min-h-0</code> - min-height: 0px</div>
+                        <div><code class="bg-purple-100 px-2 py-1 rounded">min-h-screen</code> - min-height: 100vh</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="break-page"></div>
+
+        <!-- Tipografia -->
+        <section id="typography" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">4. Tipografia</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Tamanhos de Fonte</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="space-y-2 text-sm">
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-xs</code> - font-size: 0.75rem (12px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-sm</code> - font-size: 0.875rem (14px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-base</code> - font-size: 1rem (16px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-lg</code> - font-size: 1.125rem (18px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-xl</code> - font-size: 1.25rem (20px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-2xl</code> - font-size: 1.5rem (24px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-3xl</code> - font-size: 1.875rem (30px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-4xl</code> - font-size: 2.25rem (36px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-5xl</code> - font-size: 3rem (48px)</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-6xl</code> - font-size: 3.75rem (60px)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Peso da Fonte</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-thin</code> - font-weight: 100</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-extralight</code> - font-weight: 200</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-light</code> - font-weight: 300</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-normal</code> - font-weight: 400</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-medium</code> - font-weight: 500</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-semibold</code> - font-weight: 600</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-bold</code> - font-weight: 700</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-extrabold</code> - font-weight: 800</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">font-black</code> - font-weight: 900</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Alinhamento e Espaçamento</h3>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-left</code> - text-align: left</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-center</code> - text-align: center</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-right</code> - text-align: right</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">text-justify</code> - text-align: justify</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">leading-none</code> - line-height: 1</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">leading-tight</code> - line-height: 1.25</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">leading-snug</code> - line-height: 1.375</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">leading-normal</code> - line-height: 1.5</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">leading-relaxed</code> - line-height: 1.625</div>
+                        <div><code class="bg-red-100 px-2 py-1 rounded">leading-loose</code> - line-height: 2</div>
+                    </div>
+                </div>
+            </div>
+           <!-- Cores -->
+<section id="colors" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">5. Cores</h2>
+    
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Paleta Principal</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-4 rounded text-white bg-red-500 text-center">red-500</div>
+            <div class="p-4 rounded text-white bg-blue-500 text-center">blue-500</div>
+            <div class="p-4 rounded text-white bg-green-500 text-center">green-500</div>
+            <div class="p-4 rounded text-white bg-yellow-500 text-center">yellow-500</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Variações de Cinza</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-3 md:grid-cols-6 gap-4 text-center text-sm text-gray-700">
+            <div class="p-3 rounded bg-gray-50">gray-50</div>
+            <div class="p-3 rounded bg-gray-100">gray-100</div>
+            <div class="p-3 rounded bg-gray-200">gray-200</div>
+            <div class="p-3 rounded bg-gray-300">gray-300</div>
+            <div class="p-3 rounded bg-gray-400">gray-400</div>
+            <div class="p-3 rounded bg-gray-500 text-white">gray-500</div>
+        </div>
+    </div>
+</section>
+
+<!-- Espaçamentos -->
+<section id="spacing" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">6. Espaçamentos</h2>
+    
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Margens (Margin)</h3>
+        <div class="bg-gray-100 p-4 rounded-lg text-sm space-y-2">
+            <div><code class="bg-red-100 px-2 py-1 rounded">m-0</code> - margin: 0;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">m-1</code> - margin: 0.25rem (4px);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">m-2</code> - margin: 0.5rem (8px);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">m-4</code> - margin: 1rem (16px);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">m-8</code> - margin: 2rem (32px);</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Preenchimentos (Padding)</h3>
+        <div class="bg-gray-100 p-4 rounded-lg text-sm space-y-2">
+            <div><code class="bg-red-100 px-2 py-1 rounded">p-0</code> - padding: 0;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">p-1</code> - padding: 0.25rem (4px);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">p-2</code> - padding: 0.5rem (8px);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">p-4</code> - padding: 1rem (16px);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">p-8</code> - padding: 2rem (32px);</div>
+        </div>
+    </div>
+</section>
+
+<!-- Layout -->
+<section id="layout" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">7. Layout</h2>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Display</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">block</code> - display: block;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">inline-block</code> - display: inline-block;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">inline</code> - display: inline;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">flex</code> - display: flex;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">grid</code> - display: grid;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">hidden</code> - display: none;</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Posicionamento</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">static</code> - position: static;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">relative</code> - position: relative;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">absolute</code> - position: absolute;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">fixed</code> - position: fixed;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">sticky</code> - position: sticky;</div>
+        </div>
+    </div>
+</section>
+
+<!-- Bordas -->
+<section id="borders" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">8. Bordas</h2>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Largura da Borda</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">border</code> - border-width: 1px;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">border-2</code> - border-width: 2px;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">border-4</code> - border-width: 4px;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">border-8</code> - border-width: 8px;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">border-0</code> - border-width: 0;</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Raio da Borda</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">rounded-none</code> - border-radius: 0;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">rounded-sm</code> - border-radius: 0.125rem;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">rounded</code> - border-radius: 0.25rem;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">rounded-md</code> - border-radius: 0.375rem;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">rounded-lg</code> - border-radius: 0.5rem;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">rounded-full</code> - border-radius: 9999px;</div>
+        </div>
+    </div>
+</section>
+
+<!-- Efeitos -->
+<section id="effects" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">9. Efeitos</h2>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Sombra</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-sm</code> - box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow</code> - box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-md</code> - box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-lg</code> - box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-xl</code> - box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-2xl</code> - box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-inner</code> - inset box-shadow;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">shadow-none</code> - no box-shadow;</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Opacidade</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">opacity-0</code> - opacity: 0;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">opacity-25</code> - opacity: 0.25;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">opacity-50</code> - opacity: 0.5;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">opacity-75</code> - opacity: 0.75;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">opacity-100</code> - opacity: 1;</div>
+        </div>
+    </div>
+</section>
+
+<!-- Animações -->
+<section id="animations" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">10. Animações</h2>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Transições</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">transition</code> - transition-property: all;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">transition-colors</code> - transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">transition-opacity</code> - transition-property: opacity;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">transition-shadow</code> - transition-property: box-shadow;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">transition-transform</code> - transition-property: transform;</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Animações Customizadas</h3>
+        <div class="bg-gray-100 p-4 rounded-lg space-y-2 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">animate-spin</code> - animação de rotação contínua;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">animate-ping</code> - animação de pulsar;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">animate-pulse</code> - animação de pulsação suave;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">animate-bounce</code> - animação de saltar;</div>
+        </div>
+    </div>
+</section>
+<!-- Flexbox -->
+<section id="flexbox" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">11. Flexbox</h2>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Direção do Flex</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">flex-row</code> - flex-direction: row;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">flex-row-reverse</code> - flex-direction: row-reverse;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">flex-col</code> - flex-direction: column;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">flex-col-reverse</code> - flex-direction: column-reverse;</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Alinhamento no Flex</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">justify-start</code> - justify-content: flex-start;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">justify-center</code> - justify-content: center;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">justify-end</code> - justify-content: flex-end;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">items-start</code> - align-items: flex-start;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">items-center</code> - align-items: center;</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">items-end</code> - align-items: flex-end;</div>
+        </div>
+    </div>
+</section>
+
+<!-- Responsividade -->
+<section id="responsiveness" class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-red-500 pl-4">12. Responsividade</h2>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Breakpoints Comuns</h3>
+        <div class="bg-gray-100 p-4 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div><code class="bg-red-100 px-2 py-1 rounded">sm:</code> a partir de 640px (small)</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">md:</code> a partir de 768px (medium)</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">lg:</code> a partir de 1024px (large)</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">xl:</code> a partir de 1280px (extra large)</div>
+            <div><code class="bg-red-100 px-2 py-1 rounded">2xl:</code> a partir de 1536px</div>
+        </div>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-700 mb-4">Exemplo de Uso</h3>
+        <div class="bg-gray-100 p-4 rounded-lg text-sm">
+            <p>Você pode usar utilitários responsivos para aplicar estilos em diferentes tamanhos de tela, por exemplo:</p>
+            <pre class="bg-red-100 p-3 rounded mt-2"><code>min-h-[500px] md:min-h-[600px] justify-center items-center</code></pre>
+            <p>Isso significa que a altura mínima será 500px em telas pequenas e 600px em telas médias ou maiores, e o conteúdo ficará centralizado horizontal e verticalmente usando Flexbox.</p>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="mt-16 py-6 border-t border-gray-300 text-center text-sm text-gray-600">
+    <p>© 2025 por Hugo Felipe aka withvisionstack. Todos os direitos reservados.</p>
+    <p>
+        Código disponível no
+        <a href="https://github.com/withvisionstack" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">
+            GitHub
+        </a>.
+    </p>
+</footer>
+
+
