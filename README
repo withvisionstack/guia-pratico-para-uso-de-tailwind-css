@@ -27,4 +27,4 @@ O projeto é mantido por [withvisionstack](https://github.com/withvisionstack).
 2. **Converter para PDF:** Utilize ferramentas de impressão do navegador para salvar o conteúdo como PDF para consulta offline.
 3. **Clonar o repositório:** Faça download ou clone o repositório para editar, expandir ou usar localmente.
    ```bash
-   git clone https://github.com/withvisionstack/guia-pr-tico-para-uso-de-tailwind-css
+   git clone https://github.com/withvisionstack/guia-pratico-para-uso-de-tailwind-css
